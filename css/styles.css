@@ -1,0 +1,237 @@
+/* STILI GENERALI */
+html, body, div, span, p, a, em, img, strong, fieldset, form, label, legend, input { margin:0; padding:0; border:0; outline:0; font-size:100%;  }
+
+html body div.clear { background:none; border:0; clear:both; display:block; float:none; font-size:0; margin:0; padding:0; overflow:hidden; visibility:hidden; width:0; height:0; }
+
+body { text-align:center;  line-height:150%; }
+
+#wrapper { margin:20px auto; background:#FFFFFF; }
+
+#container { width:1200px; margin:20px; text-align:left; float:left; display:inline; }
+
+h1{ color: #FFD200; }
+a { text-decoration:none; color:#CC0000; }
+.alignRight { text-align:right; }
+
+#hidden {
+	display:none;
+}
+/* STILI PRODOTTO */
+.simpleCart_shelfItem { 
+	float:left; 
+	display:inline; 
+	margin:20px 20px 20px 0;
+	width:230px;
+	line-height:100%;
+	position:relative;
+	background:#EEEEEE;
+	text-align:center;
+	-moz-border-radius:5px; 
+	border-radius:5px;
+}
+
+.simpleCart_shelfItem.last {
+	margin-right:0;
+}
+
+.simpleCart_shelfItem p { 
+	margin:10px 0 0 0; 
+}
+
+.simpleCart_shelfItem img { 
+	padding: 12px 0 12px 0;
+	background-color: #FFF;
+}
+
+.item_name {
+	
+	font-size:9px;
+	margin:10px 0;
+	padding:0;
+}
+/*
+.item_size { font-size:12px; }
+*/
+.item_add {
+	margin:10px 5px;
+	padding:4px; 
+	
+	border:none;
+	-moz-border-radius:5px; border-radius:5px;
+	text-transform: uppercase; 
+	font-size:9px;
+	cursor:pointer;
+}
+
+.itemPrice{
+	/*
+	font-weight:bold;
+	font-size:14px;
+	color:#cc0000;
+	margin:10px 5px;
+	*/
+	display:none;
+
+}
+
+
+/* STILI CARRELLO */
+.simpleCart_items {
+	float:left; 
+	display:inline;
+	width:330px;
+	/*background:#EEEEEE;*/
+	-moz-border-radius:5px; 
+	border-radius:5px;
+	padding-bottom:10px;
+	width:900px;
+}
+
+.itemContainer, .cartHeaders {
+	width:794px;
+	float:left;
+	display:inline;
+	border-bottom:1px solid #CCCCCC;
+	padding-bottom:10px;
+}
+
+.cartHeaders {
+	font-weight:bold;
+	font-size:11px;
+	color: #666666;
+}
+
+.itemContainer div, .cartHeaders div {
+	float:left;
+	display:inline;
+	border-right:1px solid #CCCCCC;
+	margin:10px 0 0 0;
+	text-align:center;
+	width:100px;
+}
+.cartHeaders .itemPrice{ display:none; }
+.itemContainer .itemPrice{ display:none; }
+div.itemName {
+	font-size:9px;
+	width:80px;
+	word-wrap: break-word;
+}
+
+div.itemTotal {
+	border-right:none;
+}
+
+
+#cartTotal {
+	text-align:right;
+	float:left;
+	width:100%;
+	margin:20px 0;
+}
+
+#cartTotal .simpleCart_total, .simpleCart_shippingCost, .simpleCart_finalTotal {
+	margin-right:15px;
+	padding:5px;
+	-moz-border-radius:5px; border-radius:5px;
+	background:#EEEEEE;
+	font-weight:bold;
+}
+
+
+/* STILI BOTTONI CHECKOUT / SVUOTA CARRELLO */
+.simpleCart_empty{
+	color:#FFFFFF;
+	background:#CC0000;
+	font-size:10px;
+	padding:5px;
+	margin-left:5px;
+	text-transform:uppercase;
+	-moz-border-radius:5px; border-radius:5px;
+}
+
+.simpleCart_checkout{
+	color:#FFFFFF;
+	background: #00CC00;
+	font-size:10px;
+	padding:5px;
+	margin-left:5px;
+	text-transform:uppercase;
+	-moz-border-radius:5px; border-radius:5px;
+}
+
+.color-filter-selected, .logo-filter-selected{
+	border: 2px solid purple;
+}
+#filters { 
+	width: 369px;
+margin-left: 36px;
+/* min-height: 584px; */
+margin-top: 90px;
+
+}
+
+#filters strong { vertical-align: top; }
+
+#color-picker div { display: inline-block;} 
+#color-picker { 
+	width: 112px;
+	display: inline-block;
+	margin-right: 30px;
+	z-index: 1;
+	position: absolute;
+	background-color: #fff;
+	border: 2px solid #333;
+	border-radius: 12px;
+	padding: 12px;
+	top:94px;
+	left:236px;
+	}
+
+#style-picker { 
+	float:left;
+	margin-right:30px;
+	display:inline-block;
+	vertical-align: top; 
+}
+
+#sidecart
+{
+	width: 192px;
+	position: absolute;
+	z-index: 9;
+	background-color: #fff;
+	padding: 12px;
+	border: 2px solid #ccc;
+	border-radius: 12px;
+	overflow: hidden;
+	margin-top: 42px;
+}
+
+
+#item-list{
+	width: 1000px;
+	/* margin-left: 300px; */
+	left: 300px;
+	position: absolute;
+}
+
+.itemQuantity{width:80px;}
+.logo-filter { 
+	height:20%;
+	width:20%;
+ }
+
+ #logo-picker { 
+ 	background-color: #eee;
+	padding-left: 20px;
+	width: 400px;
+	border: 2px solid #333;
+	border-radius: 12px;
+	/* border-top: 0px; */
+	display: inline-block;
+	left: 412px;
+	position: absolute;
+	z-index: 1;
+	top: 94px;
+ }
+

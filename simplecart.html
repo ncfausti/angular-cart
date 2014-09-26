@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MCSportsAdvantage</title>
+<script src="simplecart.js"></script>
+
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <style>
+    
+    /* Override bootstrap styles here */
+    
+    </style>
+
+
+<script type="text/javascript">
+	simpleCart.email = "email@venditore.ext";
+	simpleCart.checkoutTo = PayPal;
+    simpleCart.currency = USD;
+	simpleCart.taxRate  = 0.00;
+	simpleCart.shippingFlatRate = 15.00;
+
+	simpleCart.cartHeaders = ["Name" , "Size", "Color", "Price" , "decrement" , "Quantity", "increment", "Remove", "Total" ];
+</script>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="wrapper">
+
+  <div id="container" ng-app="myApp">
+
+    <h1>MCSportsAdvantage</h1>
+    <p class="alignRight"> Cart: <span class="simpleCart_total"></span> (<span class="simpleCart_quantity"></span> items) <a href="javascript:;" class="simpleCart_empty">empty cart</a> <br />
+    </p>
+
+    <div id="sidecart">
+      <div class="simpleCart_items"></div>
+    
+    <div id="cartTotal">
+    SubTotal: <span class="simpleCart_total"></span>
+
+    <!-- Shipping: <span class="simpleCart_shippingCost"></span> Final Total: <span class="simpleCart_finalTotal"></span>--> <a href="javascript:;" class="simpleCart_checkout">checkout</a><br>
+    <button id="expandCart" class="btn btn-sm btn-primary">Show >></button>
+    </div>
+
+  </div>
+
+    <div ng-controller="tshirtTable">
+
+    
+
+<div id="item-list">
+
+    <div id="filters">
+    <strong><button class="btn btn-primary" id="color-btn">Color </button></strong>
+      <div id="color-picker">
+        
+        <div style="background-color:red;min-height:24px;width:24px;" id="red-check" class="color-filter"> </div>
+        <div style="background-color:green;min-height:24px;width:24px;" id="green-check" class="color-filter"> </div>
+        <div style="background-color:blue;min-height:24px;width:24px;" id="blue-check" class="color-filter"> </div><br>
+        <div style="background-color:orange;min-height:24px;width:24px;" id="orange-check" class="color-filter"> </div>
+        <div style="background-color:purple;min-height:24px;width:24px;" id="purple-check" class="color-filter"> </div>
+        <div style="background-color:lime;min-height:24px;width:24px;" id="lime-check" class="color-filter"> </div><br>
+        
+        <div style="background-color:black;min-height:24px;width:24px;" id="black-check" class="color-filter"> </div>
+        <div style="background-color:white;min-height:24px;width:24px;" id="white-check" class="color-filter"> </div>
+        <div style="background-color:gray;min-height:24px;width:24px;" id="gray-check" class="color-filter"> </div>
+        </div>
+
+        <div id="style-picker">
+          <strong>Style:</strong>
+          <select id="style-filter">
+          <option></option>
+          <option value="solid">Solid</option>
+          <option value="tiedye">Tie-dye</option>
+          </select>
+        </div>
+        <strong style="float:right;"><button class="btn btn-primary" id="logo-btn">Logo</button></strong><br>
+        <div id="logo-picker">
+          <img src='img/logos/attitude.jpg' class='logo-filter' id="attitude" />
+          <img src='img/logos/basketball-dots-black.jpg' class='logo-filter' id="basketball_dots_black" />
+          <img src='img/logos/basketball-dots-white.jpg' class='logo-filter' id="basketball_dots_white" />
+          <img src='img/logos/basketball-seams-black.jpg' class='logo-filter' id="basketball_imprint_black" />
+          <img src='img/logos/basketball-seams-white.jpg' class='logo-filter' id="basketball_imprint_white" />
+          <img src='img/logos/basketball-under-seams-black.jpg' class='logo-filter' id="basketball_outline_black" />
+          <img src='img/logos/basketball-under-seams-white.jpg' class='logo-filter' id="basketball_outline_white" />
+          <img src='img/logos/beauty.jpg' class='logo-filter' id="beauty" />
+          <img src='img/logos/got-game-black.jpg' class='logo-filter' id="got_game_black" />
+          <img src='img/logos/got-game-white.jpg' class='logo-filter' id="got_game_white" />
+          <img src='img/logos/got-renegades-black.jpg' class='logo-filter' id="got_renegades_black" />
+          <img src='img/logos/got-renegades-white.jpg' class='logo-filter' id="got_renegades_white" />
+          <img src='img/logos/keep-calm.jpg' class='logo-filter' id="keep_calm" />
+          <img src='img/logos/left-hoop-basketball-black.jpg' class='logo-filter' id="net_black" />
+          <img src='img/logos/left-hoop-basketball.jpg' class='logo-filter' id="net_white" />
+          <img src='img/logos/renegades-black.jpg' class='logo-filter' id="renegades_club_black" />
+          <img src='img/logos/renegades-white.jpg' class='logo-filter' id="renegades_club_white" />
+          <img src='img/logos/take-control.jpg' class='logo-filter' id="take_control" />
+        </div>
+
+    </div><!-- end filter div -->
+      
+
+    <div ng-repeat="shirt in tshirts">
+    <div class="simpleCart_shelfItem {{shirt.color}} {{shirt.logo}}  solid-{{shirt.filename.indexOf('Solid')  > 0 }}">
+        <!--<a href="http://www.kickstartcart.com/SecureCart/SecureCart.aspx?mid=3C8080B0-78D1-4D8B-A163-CA354E8F85F4&pid=58ff0bb0d0f74fc89fe24b28163396c7&q=12&c={{shirt.color}}&s=sm">--><img src="img/tshirts/{{shirt.filename}}" width="240" height="300">
+        <p class="item_name">{{shirt.filename.replace(".jpg", "")}}</p>
+        <p>Size:
+          <select name="select" class="item_size">
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+          </select>
+        </p>
+        
+       <strong class="item_price">$10.71</strong> <input type="button" class="item_add btn btn-primary" name="hello" value="add to cart" />   
+      <!--<input type="text" ng-model="shirt.color" class="item_color" /> --> 
+    </div>    
+
+    </div>  <!-- end ng-repeat -->
+
+</div>
+
+  </div> <!--end controller -->
+    
+   <!-- <div class="clear">&nbsp;</div>-->
+    
+    
+    
+    </div>
+    
+  <div class="clear">&nbsp;</div>
+</div>
+<script src="js/angular.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html> 
